@@ -3,9 +3,9 @@ const md5 = require("md5");
 const multer = require('multer');
 const Blog = require('../model/model');
 
-
 exports.loginPage = (req, res) => {
-    res.render('loginpanel')
+    console.log('hello from here');
+    res.render('loginpanel');
 }
 
 exports.login = (req, res) => {
@@ -28,6 +28,15 @@ exports.adminDash = (req, res) => {
     else{
         res.redirect('/panel');
     }
+}
+
+exports.delete = (req, res) => {
+    const id = req.params.id;
+    Blod.deleteOne({_id:id}).then(() => {
+        res.redirect('/panel/dashboard')
+    }).catch((err) => {
+        console.log("Something went wrong");
+    });
 }
 
 exports.add = (req, res) => {

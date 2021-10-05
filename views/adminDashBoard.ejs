@@ -17,5 +17,18 @@
             <h1><a href="panel/add"></a></h1>
         </div>
     </nav>
+    <section class="dash">
+        <% if(user != 'undefine') {%>
+            <% user.forEach(ele => { %>
+                <div class="upper">
+                        <p id="name">name: <%= ele.name%></p>
+                        <p id="title">title: <%= ele.title%></p>
+                        <p id="category"><%= ele.category%></p>
+                        <a href="/<%=ele._id%>">-></a>
+                        <a href="/panel/delete/<%=ele._id%>"></a>
+                </div>
+            <%});%> 
+        <% } %>   
+    </section>
 </body>
 </html>
