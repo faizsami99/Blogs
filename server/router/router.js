@@ -18,14 +18,14 @@ router.get('/', (req, res) => {
     });
 });
 
-
-
-router.get('/:id', (req, res) => {
+router.get('/id/:id', (req, res) => {
     const id = req.params.id;
     Blog.find({_id:id}).then((user)=>{;
         res.render('blog', {
             user
         });
+    }).catch((err) => {
+        console.log('something went wrong');
     })
 })
 
