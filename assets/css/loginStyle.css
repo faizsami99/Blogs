@@ -1,0 +1,71 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second{
+    height: 100vh;
+    width: 50%;
+}
+
+.heading{
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.form input[type="email"],
+.form input[type="password"]{
+    margin-top: 1rem;
+    padding: 10px 25px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid grey;
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus{
+    outline: none;
+}
+
+.Button{
+    margin-top: 2rem;
+    padding: 10px 25px;
+    width: 30%;
+    font-size: 17px;
+    background: #61acb3;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Button:hover{
+    background: #53a9b1;
+}
+
