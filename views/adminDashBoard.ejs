@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/publicdash.css">
-
+    <link rel="stylesheet" type="text/css" href="css/admindash.css">
     <title>Admin</title>
 </head>
 <body>
@@ -15,7 +14,7 @@
             <h1>Blogs</h1>
         </div>
         <div class="add">
-            <h1><a href="panel/add"></a></h1>
+            <h1><a href="/panel/add">+</a></h1>
         </div>
     </nav>
     <section class="dash">
@@ -25,9 +24,11 @@
                         <p id="name">name: <%= ele.name%></p>
                         <p id="title">title: <%= ele.title%></p>
                         <p id="category"><%= ele.category%></p>
-                        <a href="/<%=ele._id%>">-></a>
-                        <a href="/panel/delete/<%=ele._id%>">delete</a>
-                        <a href="/panel/edit/<%=ele._id%>"></a>
+                        <div>
+                            <a href="/<%=ele._id%>">open</a>
+                            <a href="/panel/delete/<%=ele._id%>">delete</a>
+                            <a href="/panel/edit/<%=ele._id%>">edit</a>
+                        </div>
                 </div>
             <%});%> 
         <% } %>   

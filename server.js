@@ -33,6 +33,6 @@ app.use('/images', express.static(path.resolve(__dirname, 'assets/images')));
 app.use('/', router);
 app.use('/panel', adminRouter);
 
-server.listen(PORT, '192.168.1.3',() => {
-    console.log("http://192.168.1.3:8800");
-})
+server.listen(PORT, '192.168.1.7',() => {
+    console.log("http://192.168.1.7:8800");
+});

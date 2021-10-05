@@ -11,7 +11,7 @@ exports.login = (req, res) => {
     const data = req.body;
     if(data.email === process.env.EMAIL && process.env.PASSWORD === md5(data.password)){
         req.session.email = data.email;
-        res.send('logined');
+        res.redirect('/panel/dashboard');
     }
     else{
         res.redirect("/panel");
@@ -21,7 +21,7 @@ exports.login = (req, res) => {
 exports.adminDash = (req, res) => {
     if(req.session.email){
         Blog.find({}).then((user) => {
-            res.render('publicDashboard', {
+            res.render('adminDashBoard', {
                 user
             });
             console.log('hello');
@@ -37,7 +37,7 @@ exports.adminDash = (req, res) => {
 
 exports.delete = (req, res) => {
     const id = req.params.id;
-    Blod.deleteOne({_id:id}).then(() => {
+    Blog.deleteOne({_id:id}).then(() => {
         res.redirect('/panel/dashboard')
     }).catch((err) => {
         console.log("Something went wrong");
@@ -87,10 +87,10 @@ exports.addNew = (req, res) => {
 
         const obj = new Blog(data);
 
-        res.send(obj);
+        // res.send(obj);
 
         obj.save().then((user) => {
-            console.log("updated");
+            res.redirect('/panel/dashboard');
         }).catch((err) => {
             console.log("something went wrong " + err);
         });
