@@ -16,5 +16,8 @@ adminRouter.post('/add', controller.addNew);
 
 adminRouter.get('/delete/:id', controller.delete);
 
+adminRouter.get('/edit/:id' , controller.edit);
+
+adminRouter.post('/edit', controller.editNow);
 
 module.exports = adminRouter;

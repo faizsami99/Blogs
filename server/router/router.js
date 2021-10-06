@@ -18,6 +18,8 @@ router.get('/', (req, res) => {
     });
 });
 
+
+
 router.get('/id/:id', (req, res) => {
     const id = req.params.id;
     Blog.find({_id:id}).then((user)=>{;

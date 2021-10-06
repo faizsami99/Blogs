@@ -12,9 +12,7 @@
     <nav class="navbar">
         <div class="title">
             <h1>Blogs</h1>
-        </div>
-        <div class="add">
-            <h1><a href="/panel/add">+</a></h1>
+            <h2><a href="/panel/add">+</a></h2>
         </div>
     </nav>
     <section class="dash">
@@ -25,7 +23,7 @@
                         <p id="title">title: <%= ele.title%></p>
                         <p id="category"><%= ele.category%></p>
                         <div>
-                            <a href="/<%=ele._id%>">open</a>
+                            <a href="/id/<%=ele._id%>">open</a>
                             <a href="/panel/delete/<%=ele._id%>">delete</a>
                             <a href="/panel/edit/<%=ele._id%>">edit</a>
                         </div>

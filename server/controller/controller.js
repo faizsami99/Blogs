@@ -99,3 +99,29 @@ exports.addNew = (req, res) => {
         res.redirect('/panel');
     }
 }
+
+exports.edit = (req, res ) => {
+    const id = req.params.id;
+    Blog.findOne({_id:id}).then((user) => {
+        res.render('edit', {
+            user
+        });
+    }).catch((err)=> {
+        console.log("error: ", err);
+    })
+}
+
+exports.editNow = (req, res) => {
+    const {id, name, title, category, blog} = req.body;
+    Blog.findOneAndUpdate({_id:id}, {$set:{
+        name:name,
+        title:title,
+        category:category, 
+        blog:blog
+        }}).then((user) => {
+        console.log(user);
+        res.redirect('/panel/dashboard');
+    }).catch((err) => {
+        res.send(err);
+    })
+}
